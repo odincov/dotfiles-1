@@ -1,29 +1,25 @@
-" Use the Solarized Dark theme
-set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+call plug#end()
 
-" Make Vim more useful
-set nocompatible
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
-" Enhance command-line completion
-set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
-" Allow backspace in insert mode
-set backspace=indent,eol,start
-" Optimize for fast terminal connections
-set ttyfast
-" Add the g flag to search/replace by default
-set gdefault
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
-" Change mapleader
-let mapleader=","
+set nocompatible " Make Vim more useful
+set clipboard=unnamed " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set wildmenu " Enhance command-line completion
+set esckeys " Allow cursor keys in insert mode
+set backspace=indent,eol,start " Allow backspace in insert mode
+set ttyfast " Optimize for fast terminal connections
+set gdefault " Add the g flag to search/replace by default
+set encoding=utf-8 nobomb " Use UTF-8 without BOM
+let mapleader=","  " Change mapleader
+
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
+
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
@@ -31,50 +27,38 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
-" Don’t create backups when editing files in certain directories
-set backupskip=/tmp/*,/private/tmp/*
+set backupskip=/tmp/*,/private/tmp/* " Don’t create backups when editing files in certain directories
 
 " Respect modeline in files
 set modeline
 set modelines=4
+
 " Enable per-directory .vimrc files and disable unsafe commands in them
 set exrc
 set secure
-" Enable line numbers
-set number
-" Enable syntax highlighting
-syntax on
-" Highlight current line
-set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
+
+set number " Enable line numbers
+syntax on " Enable syntax highlighting
+set cursorline " Highlight current line
+set tabstop=2 " Make tabs as wide as two spaces
+
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
-" Highlight searches
-set hlsearch
-" Ignore case of searches
-set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
-" Always show status line
-set laststatus=2
-" Enable mouse in all modes
-set mouse=a
-" Disable error bells
-set noerrorbells
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-" Show the cursor position
-set ruler
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-" Show the current mode
-set showmode
-" Show the filename in the window titlebar
-set title
-" Show the (partial) command as it’s being typed
-set showcmd
+
+set hlsearch " Highlight searches
+set ignorecase " Ignore case of searches
+set incsearch " Highlight dynamically as pattern is typed
+set laststatus=2  " Always show status line
+set mouse=a  " Enable mouse in all modes
+set noerrorbells " Disable error bells
+set nostartofline " Don’t reset cursor to start of line when moving around.
+set ruler " Show the cursor position
+set shortmess=atI " Don’t show the intro message when starting Vim
+set showmode " Show the current mode
+set title " Show the filename in the window titlebar
+set showcmd " Show the (partial) command as it’s being typed
+
 " Use relative line numbers
 if exists("&relativenumber")
 	set relativenumber
@@ -104,3 +88,71 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Indent settings
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Maps Alt-[h,j,k,l] to resizing a window split
+nnoremap ˙ <C-w><
+nnoremap ∆ <C-W>-
+nnoremap ˚ <C-W>+
+nnoremap ¬ <C-w>>
+
+" Auto center things
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+
+" gO to create a new line below cursor in normal mode
+nmap g<C-O> o<ESC>k
+" g<Ctrl+o> to create a new line above cursor (Ctrl to prevent collision with 'go' command)
+nmap gO O<ESC>j
+
+" Hybrid color scheme settings
+let g:hybrid_custom_term_colors = 1
+colorscheme hybrid
+
+" Default search to very magic
+no / /\v
+" Clear search with ,/
+nmap <silent> ,/ :nohlsearch<CR>
+
+" NERDTree
+" Open NERDTree with , + n
+map <leader>n :NERDTreeToggle<CR>
+" close NERDTree after a file is opened
+let g:NERDTreeQuitOnOpen=0
+" show hidden files in NERDTree
+let NERDTreeShowHidden=1
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" Airline
+let g:airline_powerline_fonts = 1
+set laststatus=2
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.space = "\ua0"
+let g:airline_inactive_collapse = 0
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
