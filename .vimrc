@@ -1,10 +1,14 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
 call plug#end()
 
 set nocompatible " Make Vim more useful
@@ -157,3 +161,17 @@ let g:airline_left_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_sep = ''
+
+" Ale
+let g:ale_linters = {
+                    \  'javascript': ['eslint']
+                    \ }
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed = 1
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+" FZF
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>bb :Buffers<CR>
+nnoremap <leader>gg :GFiles?<CR>
+nnoremap <leader>aa :Ag<CR>
