@@ -4,6 +4,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set nocompatible " Make Vim more useful

@@ -44,6 +44,7 @@ brew install screen
 brew install fzf
 brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+brew install reattach-to-user-namespace
 brew install bash-git-prompt
 brew install gpg
 
