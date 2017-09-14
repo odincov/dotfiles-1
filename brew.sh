@@ -50,6 +50,9 @@ brew install gpg
 brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# React-native dependencies
+brew install watchman
+
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
