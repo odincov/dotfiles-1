@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'ervandew/supertab'
 call plug#end()
 
 set nocompatible " Make Vim more useful
