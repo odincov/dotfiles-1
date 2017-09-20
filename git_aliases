@@ -1,0 +1,22 @@
+# log
+alias gl="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue %cn\" --graph --abbrev-commit"
+alias gll="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue %cn\" --decorate"
+alias gls="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue %cn\" --decorate --numstat"
+
+# basic commands
+alias gcp="git cherry-pick"
+alias gst="git status -s"
+alias gcl="git clone"
+alias gci="git commit"
+alias gco="git checkout"
+alias gbr="git branch"
+alias gdiff="git diff --word-diff"
+alias gdc="git diff --cached"
+
+# Show verbose output about tags, branches or remotes
+alias gtags="git tag -l"
+alias gbranches="git branch -a"
+alias gremotes="git remote -v"
+
+# Switch to a branch, creating it if necessary
+# go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"

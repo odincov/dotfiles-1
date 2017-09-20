@@ -11,8 +11,9 @@ function doIt() {
 		--exclude ".macos" \
 		--exclude "bootstrap.sh" \
 		--exclude "brew.sh" \
-		--exclude "README.md" \
+		--exclude "hybrid.itermcolors" \
 		--exclude "LICENSE-MIT.txt" \
+		--exclude "README.md" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 }

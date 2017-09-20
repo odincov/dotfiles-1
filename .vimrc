@@ -2,6 +2,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'flowtype/vim-flow'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -163,9 +165,7 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 
 " Ale
-let g:ale_linters = {
-                    \  'javascript': ['eslint']
-                    \ }
+let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'] }
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -175,3 +175,6 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>gg :GFiles?<CR>
 nnoremap <leader>aa :Ag<CR>
+
+" Flowtyped
+let g:flow#enable = 0
