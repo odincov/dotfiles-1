@@ -169,6 +169,7 @@ let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'] }
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:airline#extensions#ale#enabled = 1
 
 " FZF
 nnoremap <leader>ff :Files<CR>
