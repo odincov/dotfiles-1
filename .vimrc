@@ -66,6 +66,8 @@ set shortmess=atI " Don’t show the intro message when starting Vim
 set showmode " Show the current mode
 set title " Show the filename in the window titlebar
 set showcmd " Show the (partial) command as it’s being typed
+set nowrap " Dont wrap lines
+set linebreak " Wrap lines at convenient points
 
 " Use relative line numbers
 if exists("&relativenumber")
