@@ -82,6 +82,11 @@
 		fi \
 	}; f"
 
+	# Unstage any files that have been added to the staging area
+	unstage = reset HEAD
+
+	# Show changes that have been staged
+	diffc = diff --cached
 [apply]
 
 	# Detect whitespace errors when applying a patch

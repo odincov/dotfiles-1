@@ -36,7 +36,6 @@ brew install wget --with-iri
 # Install GnuPG to enable PGP-signing commits.
 # brew install gnupg
 
-
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install grep
@@ -46,6 +45,10 @@ brew install fzf
 brew install reattach-to-user-namespace
 brew install bash-git-prompt
 brew install gpg
+
+# Install nodejs tools
+# brew install nvm
+brew install yarn
 
 # Install tmux and deps
 brew install tmux

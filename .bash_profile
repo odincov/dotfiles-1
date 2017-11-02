@@ -56,3 +56,7 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
