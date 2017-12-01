@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 set nocompatible " Make Vim more useful
