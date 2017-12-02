@@ -174,6 +174,10 @@ let g:ale_lint_on_text_changed = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:airline#extensions#ale#enabled = 1
 
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+
 " FZF
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
