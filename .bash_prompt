@@ -11,6 +11,27 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 	export TERM='xterm-256color';
 fi;
 
+cd() {
+	builtin cd "$1";
+
+	file=./.nvmrc;
+
+	if [ -e "$file" ]; then
+		echo ".nvmrc is present";
+		unset NVM_RC_VERSION;
+		CUR_VERSION=$(node -v |cut -c 2-);
+		nvm_rc_version > /dev/null 2>&1;
+
+		if [ -z "${NVM_RC_VERSION}" ]; then
+			export NVM_RC_VERSION=$(nvm_version default | cut -c 2-);
+		fi;
+
+		if [ "v${NVM_RC_VERSION}" != "v${CUR_VERSION}" ]; then
+			nvm use || nvm use default
+		fi;
+	fi;
+}
+
 prompt_git() {
 	local s='';
 	local branchName='';
