@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'flowtype/vim-flow'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -50,7 +50,7 @@ set secure
 set number " Enable line numbers
 syntax on " Enable syntax highlighting
 set cursorline " Highlight current line
-set tabstop=2 " Make tabs as wide as two spaces
+set tabstop=3 " Make tabs as wide as two spaces
 
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
@@ -170,7 +170,7 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 
 " Ale
-let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -178,6 +178,7 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier_eslint']
+let g:ale_fixers['scss'] = ['stylelint']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 

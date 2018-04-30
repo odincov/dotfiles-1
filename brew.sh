@@ -114,6 +114,7 @@ brew tap caskroom/cask
 brew cask install insomnia
 brew cask install framer
 brew cask install google-chrome
+brew cask install virtualbox
 
 # Remove outdated versions from the cellar.
 brew cleanup
