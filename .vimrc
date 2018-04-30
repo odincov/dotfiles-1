@@ -14,6 +14,7 @@ Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'rafaqz/ranger.vim'
 call plug#end()
 
 set nocompatible " Make Vim more useful
@@ -105,7 +106,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
-
 " Indent settings
 set shiftwidth=2
 set softtabstop=2
@@ -190,3 +190,13 @@ nnoremap <leader>aa :Ag<CR>
 
 " Flowtyped
 let g:flow#enable = 0
+
+" Ranger
+map <leader>rr :RangerEdit<cr>
+map <leader>rv :RangerVSplit<cr>
+map <leader>rs :RangerSplit<cr>
+map <leader>rt :RangerTab<cr>
+map <leader>ri :RangerInsert<cr>
+map <leader>ra :RangerAppend<cr>
+map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+
