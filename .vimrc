@@ -14,6 +14,8 @@ Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
+" Plug 'francoiscabrol/ranger.vim'
+Plug 'rafaqz/ranger.vim'
 call plug#end()
 
 set nocompatible " Make Vim more useful
@@ -153,6 +155,15 @@ let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" Ranger
+map <leader>rr :RangerEdit<cr>
+map <leader>rv :RangerVSplit<cr>
+map <leader>rs :RangerSplit<cr>
+map <leader>rt :RangerTab<cr>
+map <leader>ri :RangerInsert<cr>
+map <leader>ra :RangerAppend<cr>
+map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 
 " Airline
 let g:airline_powerline_fonts = 1
