@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 " Plug 'francoiscabrol/ranger.vim'
 Plug 'rafaqz/ranger.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 set nocompatible " Make Vim more useful
@@ -188,8 +189,7 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier_eslint']
-let g:ale_fixers['scss'] = ['stylelint']
+let g:ale_fixers = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
