@@ -108,11 +108,11 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
-
 " Indent settings
 set shiftwidth=2
 set softtabstop=2
 set autoindent
+set expandtab
 
 " Easier split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -201,3 +201,13 @@ nnoremap <leader>aa :Ag<CR>
 
 " Flowtyped
 let g:flow#enable = 0
+
+" Ranger
+map <leader>rr :RangerEdit<cr>
+map <leader>rv :RangerVSplit<cr>
+map <leader>rs :RangerSplit<cr>
+map <leader>rt :RangerTab<cr>
+map <leader>ri :RangerInsert<cr>
+map <leader>ra :RangerAppend<cr>
+map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+
