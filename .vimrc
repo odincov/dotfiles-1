@@ -19,6 +19,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'chemzqm/vim-jsx-improve'
 call plug#end()
 
 set nocompatible " Make Vim more useful
