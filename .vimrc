@@ -17,6 +17,8 @@ Plug 'terryma/vim-multiple-cursors'
 " Plug 'francoiscabrol/ranger.vim'
 Plug 'rafaqz/ranger.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set nocompatible " Make Vim more useful

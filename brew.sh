@@ -119,5 +119,9 @@ brew cask install framer
 brew cask install google-chrome
 brew cask install virtualbox
 
+# Install Nerd Fonts
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+
 # Remove outdated versions from the cellar.
 brew cleanup
