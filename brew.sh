@@ -111,6 +111,7 @@ brew install tree
 brew install jrnl
 # brew install vbindiff
 # brew install zopfli
+brew install fontforge
 
 # Install Cask
 brew tap caskroom/cask
@@ -122,6 +123,8 @@ brew cask install virtualbox
 # Install Nerd Fonts
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
+
+brew tap caskroom/fonts
 
 # Remove outdated versions from the cellar.
 brew cleanup

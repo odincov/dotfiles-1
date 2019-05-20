@@ -2,8 +2,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'flowtype/vim-flow'
+" Plug 'editorconfig/editorconfig-vim'
+" Plug 'flowtype/vim-flow'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
+Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'rafaqz/ranger.vim'
@@ -20,6 +21,15 @@ Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'chemzqm/vim-jsx-improve'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'shime/vim-livedown'
+Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
+Plug 'sheerun/vim-polyglot'
+Plug 'jason0x43/vim-js-indent'
 call plug#end()
 
 set nocompatible " Make Vim more useful
@@ -30,7 +40,7 @@ set backspace=indent,eol,start " Allow backspace in insert mode
 set ttyfast " Optimize for fast terminal connections
 set gdefault " Add the g flag to search/replace by default
 set encoding=utf-8 nobomb " Use UTF-8 without BOM
-let mapleader=","  " Change mapleader
+let mapleader=" "  " Change mapleader
 
 " Don’t add empty newlines at the end of files
 set binary
@@ -77,11 +87,6 @@ set showcmd " Show the (partial) command as it’s being typed
 set nowrap " Dont wrap lines
 set linebreak " Wrap lines at convenient points
 
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
@@ -159,6 +164,7 @@ let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 " Ranger
 map <leader>rr :RangerEdit<cr>
@@ -185,14 +191,15 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 
 " Ale
-let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'], 'typescript': ['tslint'] }
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_fixers = {}
-let g:ale_fixers = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
+let g:ale_fixers['javascript'] = ['prettier_eslint']
+let g:ale_fixers['typescript'] = ['tslint']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
@@ -214,3 +221,10 @@ map <leader>ri :RangerInsert<cr>
 map <leader>ra :RangerAppend<cr>
 map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 
+" Import Cost
+" augroup import_cost_auto_run
+"   autocmd!
+"   autocmd InsertLeave *.js,*.jsx,*.ts,*.tsx ImportCost
+"   autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
+"   autocmd CursorHold *.js,*.jsx,*.ts,*.tsx ImportCost
+" augroup END
