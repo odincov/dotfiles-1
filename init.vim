@@ -14,7 +14,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Plug 'Shougo/deoplete.nvim'
-Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'burner/vim-svelte'
 call plug#end()
 
 let mapleader=" "  " Change mapleader
@@ -46,8 +47,17 @@ set magic               " Use 'magic' patterns (extended regular expressions).
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
-set signcolumn="yes"
+set signcolumn=yes
 set updatetime=300
+set wrap!
+" COC settings
+set hidden
+set cmdheight=2
+set shortmess+=c
+
+" allow nvimrc 
+set exrc
+set secure
 
 " Hybrid color scheme settings
 let g:hybrid_custom_term_colors = 1
@@ -106,17 +116,28 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 
 " Ale
-let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'], 'typescript': ['tslint'] }
+let g:ale_linter_aliases = {}
+let g:ale_linter_aliases['svelte'] = ['css', 'javascript']
+
+let g:ale_linters = {}
+let g:ale_linters['javascript'] = ['prettier']
+let g:ale_linters['scss'] = ['scss-lint']
+let g:ale_linters['typescript'] = ['eslint']
+let g:ale_linters['svelte'] = ['prettier']
+
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier_eslint']
-let g:ale_fixers['typescript'] = ['tslint']
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['typescript'] = ['eslint']
+let g:ale_fixers['svelte'] = ['prettier']
+
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+
 
 " FZF
 nnoremap <leader>ff :Files<CR>
@@ -137,3 +158,10 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+" tree style for the vim files explorer 
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 25
+
