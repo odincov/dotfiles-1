@@ -21,7 +21,8 @@ Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'chemzqm/vim-jsx-improve'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'ianks/vim-tsx'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
