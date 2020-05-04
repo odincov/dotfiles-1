@@ -7,7 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
@@ -110,17 +110,17 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 
 " Ale
-let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'], 'typescript': ['tslint'] }
-let g:ale_sign_column_always = 1
-let g:ale_lint_on_text_changed = 1
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:airline#extensions#ale#enabled = 1
+" let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['scss-lint'], 'typescript': ['tslint'] }
+" let g:ale_sign_column_always = 1
+" let g:ale_lint_on_text_changed = 1
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:airline#extensions#ale#enabled = 1
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier_eslint']
-let g:ale_fixers['typescript'] = ['tslint']
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
+" let g:ale_fixers = {}
+" let g:ale_fixers['javascript'] = ['prettier_eslint']
+" let g:ale_fixers['typescript'] = ['tslint']
+" let g:ale_fix_on_save = 1
+" let g:ale_javascript_prettier_use_local_config = 1
 
 " FZF
 nnoremap <leader>ff :Files<CR>
@@ -137,6 +137,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-explorer'
   \ ]
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -258,3 +259,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+
+" CoC Explorer
+
+nmap <leader>ee :CocCommand explorer<CR>
